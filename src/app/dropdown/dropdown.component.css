@@ -1,0 +1,15 @@
+.DropdownHead{
+    padding: 20px;
+    border: 1px solid;
+    border-radius: 10px;
+}
+form{
+    display: flex;
+    justify-content: space-between;
+}
+.invalid{
+    color: red;
+    font-size: 13px;
+    display: flex;
+    justify-content: flex-end;
+}

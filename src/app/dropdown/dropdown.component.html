@@ -1,0 +1,18 @@
+
+<div class="DropdownHead">
+    <form  class="additional-data" [formGroup]="additionalDataValidation" >
+        <div class="dropDownStyle">
+            <select class="Drop-Down-list" formControlName="dropDownoptinalType">
+                <option [value]="'string'" selected>string</option>
+                <option [value]="'number'">number</option>
+                <option [value]="'boolean'">boolean</option>
+                <option [value]="'hexa-decimal'">Hexa-Decimal</option>
+                <option [value]="'binary'">Binary</option>
+            </select>
+        </div>
+        <div>
+            <input type="text" placeholder="Additional-Data" formControlName="dropDownData" (keyup.enter)="labelDataToApp()"/>
+        </div>       
+    </form>
+    <div *ngIf="!valid" class="invalid">Invalid selected option and data</div>
+</div>

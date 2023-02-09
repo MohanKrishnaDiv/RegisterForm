@@ -1,0 +1,51 @@
+<div class="main">
+  <form [formGroup]="registerDetails" (ngSubmit)="onSubmit() ">
+    <h2>User Registration</h2>
+    <div>
+      <label for="first-Name">First Name :</label>
+      <input type="text" placeholder="Firstname" formControlName="Firstname">   
+    </div>
+    <span *ngIf="Firstname && Firstname.invalid && Firstname.touched" class="invalid">Firstname name is Invalid</span>
+    <div>
+      <label for="Last-Name">Last Name :</label>
+      <input type="text" placeholder="Lastname" formControlName="Lastname">
+    </div>
+    <span *ngIf="Lastname && Lastname.invalid && Lastname.touched" class="invalid">Last Name is Invalid</span>
+    <div>
+      <label for="User-Name">User Name :</label>
+      <input type="text" placeholder="Username" formControlName="Username">
+    </div>
+    <span *ngIf="Username && Username.invalid && Username.touched" class="invalid">UserName is Invalid</span>
+    <div>
+      <label for="Number">Age :</label>
+      <input type="text" placeholder="Age" formControlName="Age">
+    </div>
+    <span *ngIf="Age && Age.invalid && Age.touched" class="invalid">Age is Invalid</span>
+    <div>
+      <label for="Number">Email :</label>
+      <input type="email" placeholder="Email" formControlName="Email">
+    </div>
+    <span *ngIf="Email && Email.invalid && Email.touched" class="invalid">Email is Invalid</span>
+    <div>
+      <label for="Phone">Phone :</label>
+      <input type="tel" placeholder="Phone" formControlName="Phone">
+    </div>
+    <span *ngIf="Phone && Phone.invalid && Phone.touched" class="invalid">Number is Invalid</span>
+    <div>
+      <label for="Additional Information">Additional Information :</label>
+      <input type="text" [(ngModel)]="GivenLabel" placeholder="Additonal Information" formControlName="AdditionalInfo">
+    </div>
+    <span class="invalid" *ngIf="AdditionalInfo && AdditionalInfo.invalid && AdditionalInfo.touched">Enter data</span>
+    <app-dropdown (labelDataToParent)="getFromChild($event)"></app-dropdown>
+    <div>
+      <label for="givenLabel">Given Label: {{GivenLabel}}</label>
+      <label for="givenValue">Given Value: {{GivenValue}}</label>
+    </div>
+
+    <div class="buttons">
+      <button type="reset">Reset</button>
+      <button type="submit" [disabled]="!registerDetails.valid">Submit</button>
+    </div>
+  </form>
+</div>
+<router-outlet></router-outlet>

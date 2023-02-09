@@ -1,0 +1,38 @@
+.main{
+    display: flex;
+    justify-content: center;
+    
+}
+form{
+    background-color: rgba(243, 221, 150, 0.801);
+    padding: 20px;
+    border: 1px solid;
+}
+form div{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+h2{
+    display: flex;
+    justify-content: center;
+}
+.buttons{
+    justify-content: space-around !important;
+}
+button{
+    background-color: rgba(57, 42, 26, 0.591);
+    color: white;
+    cursor: pointer;
+}
+label{
+    padding: 0px 10px;
+}
+.invalid{
+    color: red;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 40px;
+    font-size: 13px;
+}
+
